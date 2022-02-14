@@ -10,15 +10,25 @@ $color-text-dark: #333; // dark grey
 $color-text-light: #eee; // dark white
 $width-button: 150px;
 
-nav {
-  margin: 30px;
-  background: $color-primary;
-
+@mixin clearfix {
   &::after {
     content: "";
     display: block;
     clear: both;
   }
+}
+
+@mixin style-link-text($color) {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color;
+}
+
+nav {
+  margin: 30px;
+  background: $color-primary;
+
+  @include clearfix;
 }
 
 .navigation {
@@ -34,9 +44,7 @@ nav {
     }
 
     a:link {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: $color-text-dark;
+      @include style-link-text($color-text-dark);
     }
   }
 }
@@ -45,21 +53,20 @@ nav {
   float: right;
 }
 
-.btn-main:link,
-.btn-hot:link {
+%btn-placeholder {
   display: inline-block;
   padding: 10px;
-  text-decoration: none;
-  text-transform: uppercase;
   border-radius: 100px;
   background-color: red;
   width: $width-button;
   text-align: center;
-  color: $color-text-light;
+
+  @include style-link-text($color-text-light);
 }
 
 .btn-main {
   &:link {
+    @extend %btn-placeholder;
     background-color: $color-secondary;
   }
 
@@ -70,6 +77,7 @@ nav {
 
 .btn-hot {
   &:link {
+    @extend %btn-placeholder;
     background-color: $color-tertiary;
   }
 
