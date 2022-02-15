@@ -1,0 +1,22 @@
+{
+  "name": "sass-fundamentals",
+  "version": "1.0.0",
+  "description": "sass fundamentals",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jabed007/sass-fundamentals.git"
+  },
+  "author": "Md. Jabed Hossain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jabed007/sass-fundamentals/issues"
+  },
+  "homepage": "https://github.com/jabed007/sass-fundamentals#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
